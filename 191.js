@@ -1,0 +1,17 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var hammingWeight = function (n) {
+    let count = 0;
+    while (n > 0) {
+        if (n % 2 == 1) count++;
+        n = Math.floor(n / 2);
+    }
+    return count;
+};
+
+
+console.log(hammingWeight(11))
+console.log(hammingWeight(128))
+console.log(hammingWeight(2147483645))
