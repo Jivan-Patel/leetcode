@@ -1,0 +1,11 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var numberOfCuts = function (n) {
+    return n === 1 ? 0 : n % 2 === 0 ? n / 2 : n;
+};
+
+console.log(numberOfCuts(3));
+console.log(numberOfCuts(5));
+console.log(numberOfCuts(4));
