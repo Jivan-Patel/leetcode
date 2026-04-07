@@ -14,6 +14,14 @@ public:
     }
 };
 
+class Solution1 {
+public:
+    int majorityElement(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        return nums[nums.size() / 2];
+    }
+};
+
 int main() {
 
     Solution solution;
