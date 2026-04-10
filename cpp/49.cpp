@@ -27,7 +27,7 @@ public:
     }
 };
 
-class Solution {    // Best
+class Solution2 {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         vector<vector<string>> res;
@@ -44,6 +44,26 @@ public:
     }
 };
 
+class Solution {        // best
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> res;
+        unordered_map<string, vector<int>> anagram;
+        for (int i = 0; i < strs.size(); i++) {
+            string sortedStr = strs[i];
+            sort(sortedStr.begin(), sortedStr.end());            
+            anagram[sortedStr].push_back(i);
+        }
+        for (auto& [key, idx] : anagram) {
+            int lastI = res.size();
+            res.push_back({});
+            for(int i : idx) {
+                res[lastI].push_back(strs[i]);
+            }
+        }
+        return res;
+    }
+};
 
 class Solution2 {
 public:
