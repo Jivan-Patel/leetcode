@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution1 {
 public:
     string reverseWords(string s) {
         string res = "";
@@ -19,6 +19,30 @@ public:
             }
             i = j - 1;
             while (i >= 0 && s[i] == ' ') i--;
+        }
+        return res;
+    }
+};
+
+class Solution {
+public:
+    string reverseWords(string s) {
+        string temp = "";
+        vector<string> wordStore;
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] != ' ') temp += s[i];
+            else if (!temp.empty()) {
+                wordStore.push_back(temp);
+                temp = "";
+            }
+        }
+        if (!temp.empty()) {
+            wordStore.push_back(temp);
+        }
+        string res;
+        for (int i = wordStore.size() - 1; i >= 0; i--) {
+            res += wordStore[i];
+            if (i > 0) res += ' ';
         }
         return res;
     }
