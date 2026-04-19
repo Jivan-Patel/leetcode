@@ -33,7 +33,7 @@ int main() {
     Solution solution;
     vector<int> v1 = {5,0,1,4};
 
-    cout << solution.firstStableIndex() << endl;
+    cout << solution.firstStableIndex(v1,5) << endl;
 
     return 0;
 }
